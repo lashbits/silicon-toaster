@@ -1,5 +1,6 @@
 {
   "board": {
+    "3dviewports": [],
     "design_settings": {
       "defaults": {
         "board_outline_line_width": 0.15,
@@ -116,7 +117,8 @@
       "zones_allow_external_fillets": false,
       "zones_use_no_outline": true
     },
-    "layer_presets": []
+    "layer_presets": [],
+    "viewports": []
   },
   "boards": [],
   "cvpcb": {
@@ -338,7 +340,7 @@
   "net_settings": {
     "classes": [
       {
-        "bus_width": 12.0,
+        "bus_width": 12,
         "clearance": 0.2,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
@@ -352,10 +354,10 @@
         "track_width": 0.25,
         "via_diameter": 0.8,
         "via_drill": 0.4,
-        "wire_width": 6.0
+        "wire_width": 6
       },
       {
-        "bus_width": 12.0,
+        "bus_width": 12,
         "clearance": 0.6,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
@@ -364,24 +366,15 @@
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
         "name": "High Voltage",
-        "nets": [
-          "/analog/ANTENNA_A",
-          "/analog/ANTENNA_B",
-          "Net-(C18-Pad1)",
-          "Net-(C18-Pad2)",
-          "Net-(C19-Pad2)",
-          "Net-(C20-Pad1)",
-          "Net-(C21-Pad1)"
-        ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.25,
         "via_diameter": 0.8,
         "via_drill": 0.4,
-        "wire_width": 6.0
+        "wire_width": 6
       },
       {
-        "bus_width": 12.0,
+        "bus_width": 12,
         "clearance": 0.2,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
@@ -390,106 +383,393 @@
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
         "name": "Low Voltage",
-        "nets": [
-          "+15V",
-          "+3V3",
-          "+3V3A",
-          "+5V",
-          "/VBUS",
-          "/analog/CHARGE_PWM",
-          "/analog/SHOOT",
-          "/ft232/RX",
-          "/ft232/USBD+",
-          "/ft232/USBD-",
-          "/mcu/20V_EN",
-          "/mcu/ADC",
-          "/mcu/RX",
-          "/mcu/SW_SHOOT",
-          "Net-(C6-Pad1)",
-          "Net-(C7-Pad1)",
-          "Net-(C9-Pad1)",
-          "Net-(D5-Pad2)",
-          "Net-(D7-Pad2)",
-          "Net-(D8-Pad2)",
-          "Net-(J1-Pad4)",
-          "Net-(J4-Pad1)",
-          "Net-(J5-Pad2)",
-          "Net-(Q1-Pad1)",
-          "Net-(Q2-Pad1)",
-          "Net-(R10-Pad2)",
-          "Net-(R5-Pad2)",
-          "Net-(R8-Pad2)",
-          "Net-(R9-Pad2)",
-          "Net-(U1-Pad10)",
-          "Net-(U1-Pad11)",
-          "Net-(U1-Pad15)",
-          "Net-(U1-Pad16)",
-          "Net-(U1-Pad17)",
-          "Net-(U1-Pad20)",
-          "Net-(U1-Pad21)",
-          "Net-(U1-Pad22)",
-          "Net-(U1-Pad23)",
-          "Net-(U1-Pad24)",
-          "Net-(U1-Pad25)",
-          "Net-(U1-Pad26)",
-          "Net-(U1-Pad27)",
-          "Net-(U1-Pad29)",
-          "Net-(U1-Pad33)",
-          "Net-(U1-Pad34)",
-          "Net-(U1-Pad35)",
-          "Net-(U1-Pad36)",
-          "Net-(U1-Pad37)",
-          "Net-(U1-Pad38)",
-          "Net-(U1-Pad39)",
-          "Net-(U1-Pad4)",
-          "Net-(U1-Pad40)",
-          "Net-(U1-Pad44)",
-          "Net-(U1-Pad45)",
-          "Net-(U1-Pad49)",
-          "Net-(U1-Pad5)",
-          "Net-(U1-Pad50)",
-          "Net-(U1-Pad51)",
-          "Net-(U1-Pad52)",
-          "Net-(U1-Pad53)",
-          "Net-(U1-Pad54)",
-          "Net-(U1-Pad55)",
-          "Net-(U1-Pad56)",
-          "Net-(U1-Pad57)",
-          "Net-(U1-Pad58)",
-          "Net-(U1-Pad59)",
-          "Net-(U1-Pad6)",
-          "Net-(U1-Pad61)",
-          "Net-(U1-Pad62)",
-          "Net-(U1-Pad8)",
-          "Net-(U1-Pad9)",
-          "Net-(U2-Pad10)",
-          "Net-(U2-Pad11)",
-          "Net-(U2-Pad12)",
-          "Net-(U2-Pad13)",
-          "Net-(U2-Pad14)",
-          "Net-(U2-Pad19)",
-          "Net-(U2-Pad2)",
-          "Net-(U2-Pad22)",
-          "Net-(U2-Pad23)",
-          "Net-(U2-Pad27)",
-          "Net-(U2-Pad28)",
-          "Net-(U2-Pad3)",
-          "Net-(U2-Pad6)",
-          "Net-(U2-Pad9)",
-          "Net-(U6-Pad3)"
-        ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.25,
         "via_diameter": 0.8,
         "via_drill": 0.4,
-        "wire_width": 6.0
+        "wire_width": 6
       }
     ],
     "meta": {
-      "version": 2
+      "version": 3
     },
-    "net_colors": null
+    "net_colors": null,
+    "netclass_assignments": null,
+    "netclass_patterns": [
+      {
+        "netclass": "High Voltage",
+        "pattern": "/analog/ANTENNA_A"
+      },
+      {
+        "netclass": "High Voltage",
+        "pattern": "/analog/ANTENNA_B"
+      },
+      {
+        "netclass": "High Voltage",
+        "pattern": "Net-(C18-Pad1)"
+      },
+      {
+        "netclass": "High Voltage",
+        "pattern": "Net-(C18-Pad2)"
+      },
+      {
+        "netclass": "High Voltage",
+        "pattern": "Net-(C19-Pad2)"
+      },
+      {
+        "netclass": "High Voltage",
+        "pattern": "Net-(C20-Pad1)"
+      },
+      {
+        "netclass": "High Voltage",
+        "pattern": "Net-(C21-Pad1)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "+15V"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "+3V3"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "+3V3A"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "+5V"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "/VBUS"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "/analog/CHARGE_PWM"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "/analog/SHOOT"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "/ft232/RX"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "/ft232/USBD+"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "/ft232/USBD-"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "/mcu/20V_EN"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "/mcu/ADC"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "/mcu/RX"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "/mcu/SW_SHOOT"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(C6-Pad1)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(C7-Pad1)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(C9-Pad1)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(D5-Pad2)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(D7-Pad2)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(D8-Pad2)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(J1-Pad4)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(J4-Pad1)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(J5-Pad2)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(Q1-Pad1)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(Q2-Pad1)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(R10-Pad2)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(R5-Pad2)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(R8-Pad2)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(R9-Pad2)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U1-Pad10)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U1-Pad11)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U1-Pad15)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U1-Pad16)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U1-Pad17)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U1-Pad20)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U1-Pad21)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U1-Pad22)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U1-Pad23)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U1-Pad24)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U1-Pad25)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U1-Pad26)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U1-Pad27)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U1-Pad29)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U1-Pad33)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U1-Pad34)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U1-Pad35)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U1-Pad36)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U1-Pad37)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U1-Pad38)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U1-Pad39)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U1-Pad4)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U1-Pad40)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U1-Pad44)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U1-Pad45)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U1-Pad49)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U1-Pad5)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U1-Pad50)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U1-Pad51)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U1-Pad52)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U1-Pad53)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U1-Pad54)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U1-Pad55)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U1-Pad56)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U1-Pad57)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U1-Pad58)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U1-Pad59)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U1-Pad6)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U1-Pad61)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U1-Pad62)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U1-Pad8)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U1-Pad9)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U2-Pad10)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U2-Pad11)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U2-Pad12)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U2-Pad13)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U2-Pad14)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U2-Pad19)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U2-Pad2)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U2-Pad22)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U2-Pad23)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U2-Pad27)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U2-Pad28)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U2-Pad3)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U2-Pad6)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U2-Pad9)"
+      },
+      {
+        "netclass": "Low Voltage",
+        "pattern": "Net-(U6-Pad3)"
+      }
+    ]
   },
   "pcbnew": {
     "last_paths": {
