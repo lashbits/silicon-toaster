@@ -37,7 +37,7 @@ for g in netlist.groupComponents(components):
         group.refs.append(component.getRef())
         c = component
 
-    group.value = c.getValue().decode('utf8')
+    group.value = c.getValue().encode('utf8')
     group.vendor = c.getField('Vendor')
     group.vendor_ref = c.getField('VendorRef')
     group.manufacturer = c.getField('Manufacturer')
@@ -68,6 +68,6 @@ with open(sys.argv[2] + '.html', 'wb') as f:
 
 with open(sys.argv[2] + '.csv', 'wb') as f:
     for g in groups:
-        line = ';'.join([' '.join(g.refs), str(len(g.refs)), g.value,
+        line = ';'.join([' '.join(g.refs), str(len(g.refs)), g.value.decode('utf-8'),
             g.manufacturer, g.manufacturer_ref])
         f.write((line + '\n').encode('utf8'))
