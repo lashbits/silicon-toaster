@@ -404,10 +404,10 @@
       (net 1 "GND") (tstamp eed9d712-571a-4fa2-b617-7f564bf5e0ac))
     (pad "6" smd circle (at -5.835 5.835 180) (size 3 3) (layers "F.Cu" "F.Paste" "F.Mask")
       (net 83 "Net-(C18-Pad2)") (tstamp 5bc20856-921d-4ca5-8e51-26fc99168376))
-    (model "models/coilcraft_scs.wrl"
+    (model "${KIPRJMOD}/models/Coilcraft-SCS-xxxL.step"
       (offset (xyz 0 0 0))
       (scale (xyz 1 1 1))
-      (rotate (xyz 0 0 -90))
+      (rotate (xyz -90 0 90))
     )
   )
 
@@ -2928,11 +2928,11 @@
         (effects (font (size 0.75 0.75) (thickness 0.125)))
       (tstamp 7850e091-0fbf-4f7c-a328-cd019df441e0)
     )
-    (fp_text value "green" (at 0 1.43 -90) (layer "F.Fab")
+    (fp_text value "green" (at 0 1.43 90) (layer "F.Fab")
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 191379e4-86ba-4bf3-8d2d-4cd5385d32c3)
     )
-    (fp_text user "${REFERENCE}" (at 0 0 -90) (layer "F.Fab")
+    (fp_text user "${REFERENCE}" (at 0 0 90) (layer "F.Fab")
         (effects (font (size 0.4 0.4) (thickness 0.06)))
       (tstamp bd3e3af4-a5b8-4e4b-95b1-3c69a267c242)
     )
@@ -2964,8 +2964,8 @@
       (net 1 "GND") (tstamp a49f7437-7605-4a08-b3ab-0ea16e8bc6c8))
     (pad "2" smd roundrect (at 0.7875 0 270) (size 0.875 0.95) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.25)
       (net 91 "Net-(D8-Pad2)") (tstamp 1675ce03-54b6-4252-90b1-150b2d4729ec))
-    (model "${KICAD6_3DMODEL_DIR}/Diode_SMD.3dshapes/D_0603_1608Metric.wrl"
-      (offset (xyz 0 0 0))
+    (model "${KIPRJMOD}/models/LED_0603.step"
+      (offset (xyz 9 -0.4 -9.1))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
     )
@@ -2982,11 +2982,11 @@
         (effects (font (size 0.75 0.75) (thickness 0.125)))
       (tstamp 99f4f4aa-2f14-4bf9-b8a7-da1480e9e168)
     )
-    (fp_text value "red" (at 0 1.43 -90) (layer "F.Fab")
+    (fp_text value "red" (at 0 1.43 90) (layer "F.Fab")
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 286a9e39-c26f-49c3-809f-c04839a4ac04)
     )
-    (fp_text user "${REFERENCE}" (at 0 0 -90) (layer "F.Fab")
+    (fp_text user "${REFERENCE}" (at 0 0 90) (layer "F.Fab")
         (effects (font (size 0.4 0.4) (thickness 0.06)))
       (tstamp 706bece9-b980-4420-a866-a63a48a63c89)
     )
@@ -3018,8 +3018,8 @@
       (net 1 "GND") (tstamp 3a013e8f-5b12-499b-8d2d-0ad49966db1a))
     (pad "2" smd roundrect (at 0.7875 0 270) (size 0.875 0.95) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.25)
       (net 92 "Net-(D7-Pad2)") (tstamp 58b75830-9e39-45c9-8547-367ebee8a907))
-    (model "${KICAD6_3DMODEL_DIR}/Diode_SMD.3dshapes/D_0603_1608Metric.wrl"
-      (offset (xyz 0 0 0))
+    (model "${KIPRJMOD}/models/LED_0603.step"
+      (offset (xyz 9 -0.4 -9.1))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
     )
@@ -3260,7 +3260,7 @@
       (net 1 "GND") (tstamp dac75ca8-9fd9-4f25-9f22-82af6f3fdad2))
     (pad "2" smd rect (at 3.2 4.28) (size 6.4 1.44) (layers "F.Cu" "F.Paste" "F.Mask")
       (net 1 "GND") (tstamp d5a6653e-3f63-4910-afbc-8ebf149f0d3d))
-    (model "models/third-party/SMA-J-P-H-ST-EM3.stp"
+    (model "models/SMA-J-P-H-ST-EM3.stp"
       (offset (xyz 1.5 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz -90 0 0))
@@ -3278,11 +3278,11 @@
         (effects (font (size 0.75 0.75) (thickness 0.125)))
       (tstamp 61c1ad0a-88fa-4e84-b6d4-f39d3cd9072a)
     )
-    (fp_text value "USB_B_Micro" (at 0 5.6 -90) (layer "F.Fab")
+    (fp_text value "USB_B_Micro" (at 0 5.6 90) (layer "F.Fab")
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 32f7f993-844d-4647-82bc-7e4c69fc685b)
     )
-    (fp_text user "PCB Edge" (at 0 3.75 -90) (layer "Dwgs.User")
+    (fp_text user "PCB Edge" (at 0 3.75 90) (layer "Dwgs.User")
         (effects (font (size 0.5 0.5) (thickness 0.08)))
       (tstamp 8269e9fd-85b6-4956-b9ff-6bc28fa3d59b)
     )
@@ -3370,7 +3370,7 @@
       (net 1 "GND") (tstamp 36f0c0d0-5fbc-41c5-b480-ee52e9c49a15))
     (pad "6" thru_hole oval (at 3.875 1.95 270) (size 1.15 1.8) (drill oval 0.55 1.2) (layers "*.Cu" "*.Mask")
       (net 1 "GND") (tstamp 1bc36098-a67a-43e9-af34-67229b47b5d8))
-    (model "models/third-party/wurth-629105150521.stp"
+    (model "models/wurth-629105150521.stp"
       (offset (xyz 0 1 1))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -3452,7 +3452,7 @@
       (net 8 "/analog/ANTENNA_B") (tstamp 59e03393-006d-471e-9536-bbbd75e54503))
     (pad "2" smd rect (at 3.2 4.28 180) (size 6.4 1.44) (layers "F.Cu" "F.Paste" "F.Mask")
       (net 8 "/analog/ANTENNA_B") (tstamp 8e73e860-7df5-47ee-9d85-a51cffff4073))
-    (model "models/third-party/SMA-J-P-H-ST-EM3.stp"
+    (model "models/SMA-J-P-H-ST-EM3.stp"
       (offset (xyz 1.5 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz -90 0 0))
@@ -3584,7 +3584,7 @@
       (net 4 "/analog/ANTENNA_A") (tstamp d633a4de-1388-46e7-ac55-24bd558a0816))
     (pad "2" smd rect (at 3.2 4.28 180) (size 6.4 1.44) (layers "F.Cu" "F.Paste" "F.Mask")
       (net 4 "/analog/ANTENNA_A") (tstamp e0441cbd-426e-47d4-952b-8c03883e1f7a))
-    (model "models/third-party/SMA-J-P-H-ST-EM3.stp"
+    (model "models/SMA-J-P-H-ST-EM3.stp"
       (offset (xyz 1.5 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz -90 0 0))
@@ -5064,15 +5064,15 @@
     (tags "TO-247-3 Horizontal RM 5.45mm")
     (path "/00000000-0000-0000-0000-00005d9f87d8/00000000-0000-0000-0000-00005d9f90ec")
     (attr through_hole)
-    (fp_text reference "Q2" (at 5.45 27.15 -90) (layer "B.SilkS")
+    (fp_text reference "Q2" (at 5.45 27.15 90) (layer "B.SilkS")
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp 78502c21-b204-41a4-a74c-663a74be7530)
     )
-    (fp_text value "IKW40N120H3FKSA1" (at 5.45 -3.25 -90) (layer "B.Fab")
+    (fp_text value "IKW40N120H3FKSA1" (at 5.45 -3.25 90) (layer "B.Fab")
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp dcbc5a2e-2561-4663-8736-09acc9fe0209)
     )
-    (fp_text user "${REFERENCE}" (at 5.45 27.15 -90) (layer "B.Fab")
+    (fp_text user "${REFERENCE}" (at 5.45 27.15 90) (layer "B.Fab")
         (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
       (tstamp edbc17dd-aa76-4d77-81ec-11ed42efea05)
     )
@@ -5120,10 +5120,10 @@
       (net 8 "/analog/ANTENNA_B") (tstamp 572f678c-7489-4a0c-81c3-6f024e0707be))
     (pad "3" thru_hole oval (at 10.9 0 270) (size 2.5 4.5) (drill 1.5) (layers "*.Cu" "*.Mask")
       (net 1 "GND") (tstamp 20a40fd4-4825-456a-b45d-96e8fe1622a5))
-    (model "models/to-247-3-bend.wrl"
-      (offset (xyz 0 0 0))
+    (model "models/to-247-3-bend.step"
+      (offset (xyz 5.6 21 2.7))
       (scale (xyz 1 1 1))
-      (rotate (xyz 0 0 90))
+      (rotate (xyz -90 0 0))
     )
   )
 
