@@ -159,7 +159,7 @@ class Window(QWidget):
         vbox.addWidget(self.advanced)
         self.advanced.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
 
-        w = QPushButton("...")
+        w = QPushButton("PID settings")
         w.setCheckable(True)
         w.toggled.connect(self.advanced.setVisible)
         hbox.addStretch()
@@ -269,7 +269,6 @@ class Window(QWidget):
         vbox.addWidget(w)
 
         self.get_voltage_destination()
-        self.get_pwm_settings()
 
         timer = self.timer = QTimer()
         timer.setInterval(50)
@@ -309,25 +308,10 @@ class Window(QWidget):
         v = self.silicon_toaster.read_voltage()
         self.viewer.add_data(v)
         self.viewer.repaint()
-        self.get_pwm_settings()
 
     def on_off(self, value: bool):
         """Turn-on or off high voltage generation."""
         self.silicon_toaster.on_off(value)
-
-    def set_pwm_settings(self):
-        """Reconfigure device PWM settings from UX input."""
-        period, ok1 = QLocale().toInt(self.period_label.text())
-        width, ok2 = QLocale().toInt(self.width_label.text())
-        if ok1 and ok2:
-            self.silicon_toaster.set_pwm_settings(period, width)
-
-    def get_pwm_settings(self):
-        """Get PWM settings from device and update UX."""
-        period, width = self.silicon_toaster.get_pwm_settings()
-        self.period_label.setText(QLocale().toString(period))
-        self.width_label.setText(QLocale().toString(width))
-        return period, width
 
     def set_voltage_destination(self):
         """Set the main ADC control parameters according to the value of the UI"""
