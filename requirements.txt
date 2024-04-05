@@ -4,4 +4,3 @@ numpy
 PyQt5
 matplotlib
 scipy
-quicklog
