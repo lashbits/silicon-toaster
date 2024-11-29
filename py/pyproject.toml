@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "silicontoaster"
+version = "1.1"
+description = ""
+authors = ["Olivier Hérivaux <olivier.herivaux@ledger.fr>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pyserial = "^3.5"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

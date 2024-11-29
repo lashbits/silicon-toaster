@@ -1,7 +1,7 @@
 import struct
 import time
 from typing import Union
-import anomaly.util.logging
+import logging
 
 import serial
 
@@ -24,8 +24,8 @@ class SiliconToaster:
         2.57379247e00,
     ]
 
-    def __init__(self, dev):
-        self._logger = anomaly.util.logging.new_logger(__name__)
+    def __init__(self, dev, logger: logging.Logger = None):
+        self._logger = logger
 
         self.ser = serial.Serial(dev, baudrate=9600, timeout=1)
         self.set_adc_control_on_off(True)
@@ -41,7 +41,7 @@ class SiliconToaster:
 
     def _ser_write(self, data):
         self.ser.write(data)
-        time.sleep(0.1)
+        time.sleep(0.05)
 
     def _ser_read(self, size=1):
         return self.ser.read(size)
@@ -50,9 +50,11 @@ class SiliconToaster:
         received = self._ser_read(len(expected))
         if received != expected:
             if len(received) == 0:
-                self._logger.error(f"expected {expected.hex()} but received no response")
+                self._logger.error(
+                    f"expected {expected.hex()} but received no response")
             else:
-                self._logger.error(f"expected {expected.hex()} but received {received.hex()}")
+                self._logger.error(
+                    f"expected {expected.hex()} but received {received.hex()}")
             raise RuntimeError("received data is not what was expected")
 
     @staticmethod
@@ -67,10 +69,14 @@ class SiliconToaster:
         return v
 
     def _to_raw(self, value: float) -> int:
-        return int(round(SiliconToaster._convert(value, SiliconToaster.CALIBRATION_V_TO_RAW)))
+        return int(
+            round(
+                SiliconToaster._convert(value,
+                                        SiliconToaster.CALIBRATION_V_TO_RAW)))
 
     def _to_volt(self, value: int) -> float:
-        return SiliconToaster._convert(value, SiliconToaster.CALIBRATION_RAW_TO_V)
+        return SiliconToaster._convert(value,
+                                       SiliconToaster.CALIBRATION_RAW_TO_V)
 
     def _read_voltage_raw(self) -> int:
         """
@@ -112,11 +118,14 @@ class SiliconToaster:
             pulse width.
         """
         if period < 1:
-            raise ValueError("Invalid PWM period: it must be greater or equal to 1")
+            raise ValueError(
+                "Invalid PWM period: it must be greater or equal to 1")
         if width < 0:
             raise ValueError("Invalid PWM width: it must be positive")
         if width >= period:
-            raise ValueError("Invalid PWM settings values: width must be lesser than period")
+            raise ValueError(
+                "Invalid PWM settings values: width must be lesser than period"
+            )
         command = bytearray(b"\x03")
         command += period.to_bytes(2, "big", signed=False)
         command += width.to_bytes(2, "big", signed=False)
@@ -128,7 +137,9 @@ class SiliconToaster:
         Generate a pulse with the device to discharge de capacitors.
         """
         if duration not in range(0x10000):
-            raise ValueError(f"Invalid software shoot duration: it must be lesser than {0x10000}")
+            raise ValueError(
+                f"Invalid software shoot duration: it must be lesser than {0x10000}"
+            )
         command = bytearray(b"\x04")
         command += duration.to_bytes(2, "big", signed=False)
         self._ser_write(command)
@@ -222,7 +233,8 @@ class SiliconToaster:
         self._verify_response(b"\x0D")
         return struct.unpack(">5fQ", self._ser_read(5 * 4 + 8))
 
-    def set_adc_control_pid_ex(self, p_limit: float, i_limit: float, d_limit: float, output_limit: float):
+    def set_adc_control_pid_ex(self, p_limit: float, i_limit: float,
+                               d_limit: float, output_limit: float):
         """
         Set supplementary values of configuration of the ADC Control.
         Those values are transient and are reset to their default values on startup.
