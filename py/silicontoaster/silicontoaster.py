@@ -8,27 +8,30 @@ import serial
 
 class SiliconToaster:
 
-    # these are coefficients calculated using the calibration scripts
+    # These are coefficients calculated using the calibration scripts
     CALIBRATION_RAW_TO_V = [
-        -4.02294398e-11,
-        1.53492378e-07,
-        -2.71166328e-04,
-        7.66927146e-01,
-        -1.12729564e00,
+        -3.77130438e-11,
+        1.79569303e-07,
+        -4.23380713e-04,
+        8.64865604e-01,
+        -2.68165692e+00,
     ]
     CALIBRATION_V_TO_RAW = [
-        5.59972560e-10,
-        -1.02408301e-06,
-        1.06453179e-03,
-        1.24457162e00,
-        2.57379247e00,
+        4.53630436e-10,
+        3.25103893e-08,
+        8.13799281e-04,
+        1.14298429e+00,
+        3.29130670e+00,
     ]
 
-    def __init__(self, dev, logger: logging.Logger = None):
+    def __init__(self,
+                 dev,
+                 logger: logging.Logger = None,
+                 adc_control: bool = True):
         self._logger = logger
 
         self.ser = serial.Serial(dev, baudrate=9600, timeout=1)
-        self.set_adc_control_on_off(True)
+        self.set_adc_control_on_off(adc_control)
 
     def __enter__(self):
         return self
@@ -195,7 +198,8 @@ class SiliconToaster:
         """
         Get ADC control PID.
 
-        :return: A tuple containing the period and the width.
+        :return: A tuple containing three floats for Kp, Ki and Kd, plus
+                 an unsigned long long for the control ticks.
         """
         command = b"\x0A"
         command += struct.pack(">?", from_flash)
